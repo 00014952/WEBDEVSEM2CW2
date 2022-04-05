@@ -43,5 +43,10 @@ app.get("/jobs/:id/update", async (req, res) => {
   const job = await Job.findById(id);
   res.render("update", { job });
 });
+app.put("/jobs/:id", async (req, res) => {
+  const { id } = req.params;
+  const job = await Job.findByIdAndUpdate(id, req.body.job);
+  res.redirect("/jobs");
+});
 
 app.listen(3000, () => console.log("Server started on port 3000"));

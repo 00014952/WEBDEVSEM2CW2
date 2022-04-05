@@ -1,12 +1,18 @@
 <% layout('./boilerplate') %>
 <div class="container">
-  <form action="/jobs" method="POST" class="validated-form form" novalidate>
+  <form
+    action="/jobs/<%=job._id%>?_method=PUT"
+    method="POST"
+    class="validated-form form"
+    novalidate
+  >
     <div class="mb-3">
       <div class="form-group">
         <label class="form-label" for="title">Job Title</label>
         <input
           class="form-control"
           type="text"
+          value="<%=job.title %>"
           id="title"
           name="job[title]"
           required
@@ -17,6 +23,7 @@
         <input
           class="form-control"
           type="text"
+          value="<%=job.desc %>"
           id="desc"
           name="job[desc]"
           required
@@ -27,6 +34,7 @@
         <input
           class="form-control"
           type="text"
+          value="<%=job.loc %>"
           id="loc"
           name="job[loc]"
           required
@@ -35,7 +43,7 @@
     </div>
 
     <div class="mb-3">
-      <button class="btn btn-success">Add Job</button>
+      <button class="btn btn-primary">Update Job</button>
     </div>
   </form>
   <a href="/jobs">All Jobs</a>
