@@ -1,50 +1,54 @@
 <% layout('./boilerplate') %>
 <div class="container">
-  <form
-    action="/jobs/<%=job._id%>?_method=PUT"
-    method="POST"
-    class="validated-form form"
-    novalidate
-  >
-    <div class="mb-3">
-      <div class="form-group">
-        <label class="form-label" for="title">Job Title</label>
-        <input
-          class="form-control"
-          type="text"
-          value="<%=job.title %>"
-          id="title"
-          name="job[title]"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="desc">Job Description</label>
-        <input
-          class="form-control"
-          type="text"
-          value="<%=job.desc %>"
-          id="desc"
-          name="job[desc]"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="loc">Job Location</label>
-        <input
-          class="form-control"
-          type="text"
-          value="<%=job.loc %>"
-          id="loc"
-          name="job[loc]"
-          required
-        />
-      </div>
-    </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <form
+        action="/jobs/<%=job._id%>?_method=PUT"
+        method="POST"
+        class="validated-form form"
+        novalidate
+      >
+        <div class="mb-3">
+          <div class="form-group">
+            <label class="form-label" for="title">Job Title</label>
+            <input
+              class="form-control"
+              type="text"
+              value="<%=job.title %>"
+              id="title"
+              name="job[title]"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="desc">Job Description</label>
+            <input
+              class="form-control"
+              type="text"
+              value="<%=job.desc %>"
+              id="desc"
+              name="job[desc]"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="loc">Job Location</label>
+            <input
+              class="form-control"
+              type="text"
+              value="<%=job.loc %>"
+              id="loc"
+              name="job[loc]"
+              required
+            />
+          </div>
+        </div>
 
-    <div class="mb-3">
-      <button class="btn btn-primary">Update Job</button>
+        <div class="mb-3">
+          <button class="btn btn-primary">Update Job</button>
+        </div>
+      </form>
+      <a href="/jobs">All Jobs</a>
     </div>
-  </form>
-  <a href="/jobs">All Jobs</a>
+  </div>
 </div>

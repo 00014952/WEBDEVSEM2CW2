@@ -5,6 +5,8 @@
   <p class="text-muted"><%=job.loc %></p>
   <div class="d-flex justify-content-evenly">
     <a href="/jobs/<%=job._id %>/update">Update</a>
-    <form action=""><button class="btn btn-warning">Remove</button></form>
+    <form action="/jobs/<%=job._id %>?_method=DELETE" method="POST">
+      <button class="btn btn-warning">Remove</button>
+    </form>
   </div>
 </div>
