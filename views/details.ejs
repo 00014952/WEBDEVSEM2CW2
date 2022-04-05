@@ -1,0 +1,10 @@
+<% layout('./boilerplate') %>
+<div class="container w-50">
+  <h1><%=job.title %></h1>
+  <p><%=job.desc %></p>
+  <p class="text-muted"><%=job.loc %></p>
+  <div class="d-flex justify-content-evenly">
+    <a href="/jobs/<%=job._id %>/update">Update</a>
+    <form action=""><button class="btn btn-warning">Remove</button></form>
+  </div>
+</div>

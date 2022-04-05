@@ -1,1 +1,16 @@
-<% layout('layouts/boilerplate') %> <% for %>
+<% layout('./boilerplate') %>
+<div class="containet mx-auto">
+  <a class="nav-link" href="/jobs/create">New Job</a>
+  <% for (let job of jobs){ %>
+  <div class="containet d-flex justify-content-evenly mx-auto">
+    <div class="card my-3" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title"><%=job.title%></h5>
+        <p class="card-text"><%=job.desc%></p>
+        <p class="card-text text-muted"><%=job.loc%></p>
+        <a href="/jobs/<%=job._id%>">Details</a>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>
